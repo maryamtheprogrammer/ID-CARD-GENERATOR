@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+   <style>
+    body{
+        background-color: #fef8f8;
+        font-family: sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #body-container{
+        padding: 20px;
+        margin: 10px;
+    }
+    #generated-id-card{
+        display: none;
+        height: 150px;
+        width: 300px;
+        border: 2px solid black;
+        background-color: #fff;
+        box-shadow: 0 0 10px #656464;
+        margin: 30px;
+        padding: 10px;
+    }
+
+    img{
+        height: 100px;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+
+    #student-id-card{
+        display: flex;
+        gap: 6px;
+    }
+
+    #student-details-container{
+        margin-top: 17px;
+        font-size: 20px;
+    }
+
+    header{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    label{
+        font-size: 16px;
+    }
+    input{
+        padding: 4px;
+        outline: none;
+        border: 1px solid #000;
+        margin: 5px;
+        
+    }
+
+    button{
+        background-color: blue;
+        color: #fff;
+        padding: 6px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: rgb(43, 43, 252);
+        transition: .3s ease;
+    }
+   </style>
+</head>
+
+<body>
+    <header>
+        <div style="margin: 15px;">ID Card Generator</div>
+    </header>
+    <section>
+        <div id="body-container">
+            <div id="user-details">
+                <div id="form-elements-container">
+                   
+                    <!-- <form> -->
+                        <div>
+                            <label for="student-name">Enter Name</label>
+                            <input type="text" id="student-name" placeholder="Enter your name here">
+                        </div>
+                        <div>
+                            <label for="age">Enter Age</label>
+                            <input type="text" id="age" placeholder="Enter your age here">
+                        </div>
+                        <div>
+                            <label for="school-name">Enter your school name</label>
+                            <input type="text" id="school-name" placeholder="Enter school name here">
+                        </div>
+                        <div>
+                            <label for="classs">Enter your class</label>
+                            <input type="text" id="classs" placeholder="Enter class here">
+                        </div>
+                        <div>
+                            <label for="image-upload">Upload Student Image</label>
+                            <input type="file" id="image-upload" onchange="previewImage(event)">
+                        </div>
+                        <button onclick="generateIdCard(event)">Generate Card</button>
+                    <!-- </form> -->
+                </div>
+            </div>
+            <div id="generated-id-card">
+                <div id="form-elements-container">
+                    
+                    <div id="student-id-card">
+                        <div id="student-image-contaner">
+                        <img src="#" id="student-image" alt="student profile image">
+                        </div>
+                        <div id="student-details-container">
+                            <div>
+                                <span>Name:</span>
+                                <span id="generated-student-name">Mary</span>
+                            </div>
+                            <div>
+                                <span>Age:</span>
+                                <span id="generated-age">15</span>
+                            </div>
+                            <div>
+                                <span>School:</span>
+                                <span id="generated-school-name">ABC School</span>
+                            </div>
+                            <div>
+                                <span>Class:</span>
+                                <span id="generated-class">X Class</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
